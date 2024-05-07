@@ -1635,76 +1635,77 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder:(context,i){
                   return InkWell(
                       onTap:(){},
-                      child:Card(
-                        shape:OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(15),
-                            borderSide:BorderSide(
-                                color:Colors.black12
-                            )
-                        ),
-                        color:Colors.black26,
-                        child:Column(
-                            children:[
-                              Flexible(
-                                flex: 1,
-                                child: Container(
-                                  child:Image(
-                                      height:150,
-                                      width:130,
-                                      fit:BoxFit.cover,
-                                      image:AssetImage("${drinks[i]["pic"]}")
-                                  ),
-                                  height:130,
-                                ),
-                              ),
-                              Flexible(
-                                flex: 1,
-                                child: Text(
-                                  "${drinks[i]["txt1"]}",
-                                  style:TextStyle(
-                                    fontSize:22,
-                                    fontWeight:FontWeight.w800,
-                                    color:Colors.blueGrey,
+                      child:Flexible(
+                        flex: 6,
+                        child: Card(
+                          shape:OutlineInputBorder(
+                              borderRadius:BorderRadius.circular(15),
+                              borderSide:BorderSide(
+                                  color:Colors.black12
+                              )
+                          ),
+                          color:Colors.black26,
+                          child:Column(
+                              children:[
+                                Flexible(
+                                  flex: 3,
+                                  child: Container(
+                                    child:Image(
+                                        fit:BoxFit.cover,
+                                        image:AssetImage("${drinks[i]["pic"]}")
+                                    ),
+                                    height:130,
                                   ),
                                 ),
-                              ),
-                              Row(
-                                  children:[
-                                    Flexible(
-                                      flex: 1,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(top:5,left:5),
-                                        child: Text(
-                                            "${drinks[i]["price"]}",
-                                            style:TextStyle(
-                                                fontSize:22,
-                                                color:Colors.deepOrangeAccent,
-                                                fontWeight:FontWeight.w600
-                                            )
-                                        ),
-                                      ),
+                                Flexible(
+                                  flex: 1,
+                                  child: Text(
+                                    "${drinks[i]["txt1"]}",
+                                    style:TextStyle(
+                                      fontSize:22,
+                                      fontWeight:FontWeight.w800,
+                                      color:Colors.blueGrey,
                                     ),
-                                    SizedBox(
-                                      width:75,
-                                    ),
-                                    Flexible(
-                                      flex: 1,
-                                      child: InkWell(
-                                        onTap:(){},
-                                        child: CircleAvatar(
-                                          child:Icon(
-                                              Icons.add
+                                  ),
+                                ),
+                                Row(
+                                    children:[
+                                      Flexible(
+                                        flex: 1,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(top:5,left:5),
+                                          child: Text(
+                                              "${drinks[i]["price"]}",
+                                              style:TextStyle(
+                                                  fontSize:22,
+                                                  color:Colors.deepOrangeAccent,
+                                                  fontWeight:FontWeight.w600
+                                              )
                                           ),
-                                          backgroundColor:Color(0xff645394),
-                                          radius:15,
                                         ),
-                                        splashColor:Colors.black26,
-                                        focusColor:Colors.black26,
                                       ),
-                                    ),
-                                  ]
-                              ),
-                            ]
+                                      SizedBox(
+                                        width:75,
+                                      ),
+                                      Flexible(
+                                        flex: 1,
+                                        child: InkWell(
+                                          onTap:(){},
+                                          child: CircleAvatar(
+                                            child:Icon(
+                                                Icons.add
+                                            ),
+                                            backgroundColor:Color(0xff645394),
+                                            radius:15,
+                                          ),
+                                          splashColor:Colors.black26,
+                                          focusColor:Colors.black26,
+                                        ),
+                                      ),
+                                    ]
+                                ),
+                              ]
+                          ),
                         ),
                       )
                   );
@@ -1713,12 +1714,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    ),
-
-    // Orders
-    Container(
-      width:double.infinity,
-      color:Colors.yellow,
     ),
 
     // Account
@@ -1732,7 +1727,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Center(
             child:CircleAvatar(
-              backgroundImage:AssetImage("lib/img/ahmed.jpg"),
+              backgroundImage:AssetImage("lib/img/hot.jpg"),
               radius:60,
             )
           ),
@@ -1741,7 +1736,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Center(
             child: Text(
-                "Ahmed Khalaf",
+                "المشطشط",
                 style:TextStyle(
                     fontSize:24,
                     fontWeight:FontWeight.w500,
@@ -2133,12 +2128,6 @@ class _HomePageState extends State<HomePage> {
             label:"Drinks",
             icon:Icon(
                 Icons.shopping_cart_rounded
-            ),
-          ),
-          BottomNavigationBarItem(
-            label:"Orders",
-            icon:Icon(
-                Icons.list_alt_outlined
             ),
           ),
           BottomNavigationBarItem(

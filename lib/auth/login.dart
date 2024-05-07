@@ -230,6 +230,9 @@ class _LoginState extends State<Login> {
                       )..show();
                     }
                    } on FirebaseAuthException catch (e) {
+                      loading = false;
+                      setState((){});
+                      await Future.delayed(Duration.zero);
                      if (e.code == 'user-not-found') {
                        print('No user found for that email.');
                        AwesomeDialog(
@@ -249,8 +252,18 @@ class _LoginState extends State<Login> {
                          desc: 'Wrong password provided for that user.',
                        )..show();
                      }
+                     else{
+                       print("not Vaild");
+                       AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.error,
+                        animType: AnimType.bottomSlide,
+                        title: 'Error',
+                        desc: 'Wrong Email or Password.',
+                        )..show();
                    }
                  }
+                  }
                  else{
                    print("not Vaild");
                  }
